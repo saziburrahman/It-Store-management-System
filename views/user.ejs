@@ -1,0 +1,43 @@
+<%- include('header.ejs') %>
+<%- include('bodyStart.ejs') %>
+
+<h1 class="text-center">Employee List</h1>
+
+<a href="/employeeRegistration" class="btn btn-primary">Register Employee</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Present Adress</th>
+            <th>Gender</th>
+            <th>Designation</th>
+            <th>Depertment</th>
+            <th>Edit Action</th>
+            <th>Delete Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(users.length>0){ %>
+            <% for(let i=0;i<users.length;i++){ %>
+                <tr>
+                    <td><%= users[i].employeeName %></td>
+                    <td><%= users[i].employeeEmail %></td>
+                    <td><%= users[i].employeePhone %></td>
+                    <td><%= users[i].employeeAddress %></td>
+                    <td><%= users[i].employeeGender %></td>
+                    <td><%= users[i].employeeDesignation %></td>
+                    <td><%= users[i].employeeDepertment %></td>
+                    <td><a href="/edit/<%= users[i].id %>">Edit</a></td>
+                    <td><a href="/delete/<%= users[i].id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <p>No Registered Employee</p>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('footer.ejs') %>

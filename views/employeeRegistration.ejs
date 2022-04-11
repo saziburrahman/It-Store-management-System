@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/employeeRegistration.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form">
+            <form method="post">
+                <label for="" class="form-label">Name</label>
+                <input type="text" name="employeeName" class="form-control" required>
+                <label for="" class="form-label">E-mail</label>
+                <input type="text" name="employeeEmail" class="form-control" required>
+                <label for="" class="form-label">Phone</label>
+                <input type="text" name="employeePhone" class="form-control" required>
+                <label for="" class="form-label">Present Address</label>
+                <input type="text" name="employeeAddress" class="form-control" required>
+                <label for="" class="form-label">Gender</label><br>
+                <input type="radio" name="employeeGender" value="Male" required> Male<br>
+                <input type="radio" name="employeeGender" value="Female" required> Female<br>
+                <input type="radio" name="employeeGender" value="Others" required> Others<br>
+                <br>
+                <label for="" class="form-label">Designation</label>
+                <input type="text" name="employeeDesignation" class="form-control" required>
+                <label for="" class="form-label">Depertment</label>
+                <input type="text" name="employeeDepertment" class="form-control" required>
+                <button type="submit" class="btn btn-primary mt-2">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

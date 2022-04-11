@@ -1,0 +1,38 @@
+<%- include('header.ejs') %>
+<%- include('bodyStart.ejs') %>
+
+<h1 class="text-center">Seller List</h1>
+<a href="/registerSeller" class="btn btn-primary">Add Seller</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Organization Name</th>
+            <th>Branch Name</th>
+            <th>Product</th>
+            <th>Product Billing Copy Id</th>
+            <th>Contact</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(sellers.length>0){ %>
+            <% for(let i=0;i<sellers.length;i++) { %>
+                <tr>
+                    <td><%= sellers[i].sellerOrganigationName %></td>
+                    <td><%= sellers[i].sellerOrganigationBranch %></td>
+                    <td><%= sellers[i].sellerOrganigationProduct %></td>
+                    <td><%= sellers[i].sellerOrganigationBillingId %></td>
+                    <td><%= sellers[i].sellerOrganigationContact %></td>
+                    <td><a href="/sellerEdit/<%= sellers[i].id %>">Edit</a></td>
+                    <td><a href="/sellerDelete/<%= sellers[i].id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <%} else {%>
+            <p>No Data</p>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('footer.ejs') %>

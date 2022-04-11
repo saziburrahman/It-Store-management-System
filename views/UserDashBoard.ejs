@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+
+
+    <style>
+        #searchResults{
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        hr{
+            margin: 0;
+            padding: 0;
+        }
+        .cursor{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <%- include('userDashboardNav.ejs') %>
+    
+    <div class="container">
+
+        <h1 class="text-center">Product Record for Employee</h1>
+        <form method="post">
+            <label for="" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" name="allocateUserName" onkeyup="employeeName(this)" id="allocateUserName" required>
+            <div id="employeeNameResult" style="z-index: 3; position: absolute;">
+
+            </div>
+            <input type="text" id="employeeID"  name="employeeID" style="display: none;">
+
+            <label for="" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="allocateProductName" name="allocateProductName" onkeyup="productName(this)" required>
+            <div id="productNameResult" style="z-index: 3; position: absolute;">
+
+            </div>
+            <input type="text" id="productId" name="productId" style="display: none;">
+            <label for="" class="form-label">Product Quantity</label>
+            <input type="number" class="form-control" name="allocateProductQuantity" required>
+            <label for="" class="form-label">Product Issue Date</label>
+            <input type="date" class="form-control" name="allocateProductIssueDate" required>
+            <label for="" class="form-label">Remarks</label>
+            <input type="text" class="form-control" name="allocateProductRemarks" required>
+            <button class="mt-2 btn btn-primary" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+
+    <script src="/js/user.Dashboard.js"></script>
+</body>
+</html>

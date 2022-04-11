@@ -1,0 +1,45 @@
+<%- include('header.ejs')%>
+<%- include('bodyStart.ejs') %>
+<h1 class="text-center">Product List</h1>
+<a href="/addProduct" class="btn btn-primary"> Add Product </a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Purchage Date</th>
+            <th>Depriciation Value</th>
+            <th>Warrenty</th>
+            <th>Seller</th>
+            <th>Price</th>
+            <th>Edit Action</th>
+            <th>Delete Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(products.length>0){ %>
+            <% for(let i=0;i<products.length;i++){ %>
+                <tr>
+                    <td><%= products[i].productBrandName %></td>
+                    <td><%= products[i].productCategory %></td>
+                    <td><%= products[i].productQuantity %></td>
+                    <td><%= products[i].productParchageDate.toDateString() %></td>
+                    <td></td>
+                    <td><%= products[i].productWarrenty %></td>
+                    <td><%= products[i].productSeller %></td>
+                    <td><%= products[i].productPrice %></td>
+                    <td><a href="/editProduct/<%= products[i].id %>">Edit</a></td>
+                    <td><a href="/deleteProduct/<%= products[i].id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <p>No Registered Product</p>
+        <% } %>
+    </tbody>
+</table>
+
+
+
+<%- include('footer.ejs')%>

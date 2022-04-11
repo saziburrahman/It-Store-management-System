@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Product</title>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <%- include('userDashboardNav.ejs') %>
+    <div class="container">
+        <h1 class="mt-2 text-center">Register Product</h1>
+        <form method="post">
+            <label for="" class="form-label">Brand Name</label>
+            <input type="text" name="productBrandName" class="form-control" required>
+            <label for="" class="form-label">Product Category</label>
+            <input type="text" name="productCategory" class="form-control" required>
+            <label for="" class="form-label">Product Quantity</label>
+            <input type="text" name="productQuantity" class="form-control" required>
+            <label for="" class="form-label">Parchage Date</label>
+            <input type="date" name="productParchageDate" class="form-control" required>
+            <label for="" class="form-label">Warrenty</label>
+            <input type="text" name="productWarrenty" class="form-control" required>
+            <label for="" class="form-label">Seller</label>
+            <input type="text" name="productSeller" class="form-control" required>
+            <label for="" class="form-label">Price</label>
+            <input type="text" name="productPrice" class="form-control" required>
+            <button type="submit" class="btn btn-primary mt-2 mb-5">Submit</button>
+        </form>
+    </div>
+
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

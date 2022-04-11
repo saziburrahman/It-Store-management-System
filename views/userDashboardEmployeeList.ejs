@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <%- include('userDashboardNav.ejs') %>
+
+    <div class="container">
+        <h1 class="text-center">Employee List</h1>
+        <a href="/userDashboardEmployeeRegistration" class="btn btn-primary">Add Employee</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Gender</th>
+                    <th>Designation</th>
+                    <th>Depertment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(employees.length>0){ %>
+                    <% for(let i=0;i<employees.length;i++){ %>
+                        <tr>
+                            <td><%= employees[i].employeeName %></td>
+                            <td><%= employees[i].employeeEmail %></td>
+                            <td><%= employees[i].employeePhone %></td>
+                            <td><%= employees[i].employeeGender %></td>
+                            <td><%= employees[i].employeeDesignation %></td>
+                            <td><%= employees[i].employeeDepertment %></td>
+                        </tr>
+                    <%}%>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
